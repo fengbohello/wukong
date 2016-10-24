@@ -59,6 +59,10 @@ type Engine struct {
 	persistentStorageInitChannel           chan bool
 }
 
+func (engine * Engine)GetSegmenter()(*sego.Segmenter){
+    return &segmenter
+}
+
 func (engine *Engine) Init(options types.EngineInitOptions) {
 	// 将线程数设置为CPU数
 	runtime.GOMAXPROCS(runtime.NumCPU())
